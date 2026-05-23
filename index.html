@@ -1,10 +1,355 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Benim Sitem</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organic Vitality System</title>
+
+  <!-- Google Fonts: Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'surface': '#f8faf9',
+            'surface-dim': '#d8dada',
+            'surface-bright': '#f8faf9',
+            'surface-container-lowest': '#ffffff',
+            'surface-container-low': '#f2f4f3',
+            'surface-container': '#eceeed',
+            'surface-container-high': '#e6e9e8',
+            'surface-container-highest': '#e1e3e2',
+            'on-surface': '#191c1c',
+            'on-surface-variant': '#3c4a3f',
+            'inverse-surface': '#2e3131',
+            'inverse-on-surface': '#eff1f0',
+            'outline': '#6c7b6e',
+            'outline-variant': '#bbcabc',
+            'surface-tint': '#006d3e',
+            'primary': '#006d3e',
+            'on-primary': '#ffffff',
+            'primary-container': '#2dd482',
+            'on-primary-container': '#005630',
+            'inverse-primary': '#40e18d',
+            'secondary': '#845400',
+            'on-secondary': '#ffffff',
+            'secondary-container': '#feb246',
+            'on-secondary-container': '#6f4600',
+            'tertiary': '#005cbb',
+            'on-tertiary': '#ffffff',
+            'tertiary-container': '#97bbff',
+            'on-tertiary-container': '#004996',
+            'error': '#ba1a1a',
+            'on-error': '#ffffff',
+            'error-container': '#ffdad6',
+            'on-error-container': '#93000a',
+            'primary-fixed': '#63fea7',
+            'primary-fixed-dim': '#40e18d',
+            'on-primary-fixed': '#00210f',
+            'on-primary-fixed-variant': '#00522d',
+            'secondary-fixed': '#ffddb6',
+            'secondary-fixed-dim': '#ffb95a',
+            'on-secondary-fixed': '#2a1800',
+            'on-secondary-fixed-variant': '#643f00',
+            'tertiary-fixed': '#d7e3ff',
+            'tertiary-fixed-dim': '#abc7ff',
+            'on-tertiary-fixed': '#001b3f',
+            'on-tertiary-fixed-variant': '#00458f',
+            'background': '#f8faf9',
+            'on-background': '#191c1c',
+            'surface-variant': '#e1e3e2'
+          },
+          fontFamily: {
+            sans: ['Quicksand', 'sans-serif'],
+          },
+          borderRadius: {
+            'sm': '0.25rem',
+            DEFAULT: '0.5rem',
+            'md': '0.75rem',
+            'lg': '1rem',
+            'xl': '1.5rem',
+            'full': '9999px',
+          },
+          spacing: {
+            'base': '8px',
+            'container-padding': '20px',
+            'element-gap': '12px',
+            'section-margin': '32px',
+          },
+          boxShadow: {
+            'floating': '0 8px 20px rgba(0, 109, 62, 0.06)',
+            'floating-active': '0 2px 4px rgba(0, 109, 62, 0.06)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .headline-xl {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: -0.5px;
+      }
+      .headline-lg {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+      }
+      .headline-md {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+      }
+      .body-lg {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 26px;
+      }
+      .body-md {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+      .label-md {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+      }
+      .label-sm {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+      }
+    }
+  </style>
 </head>
-<body>
-  <h1>Merhaba, sitem yayında!</h1>
-  <p>Bu site GitHub Pages ile ücretsiz yayınlandı.</p>
+<body class="bg-background text-on-background font-sans antialiased min-h-screen pb-24">
+  <div class="max-w-md mx-auto px-container-padding pt-8 grid gap-element-gap">
+
+    <!-- Header & Streak Badge -->
+    <header class="flex justify-between items-center mb-section-margin">
+      <div>
+        <p class="body-md text-on-surface-variant">Good morning,</p>
+        <h1 class="headline-lg text-on-surface">Emre</h1>
+      </div>
+
+      <!-- Streak Badge -->
+      <div class="flex items-center gap-1 bg-secondary-container text-on-secondary-container px-3 py-1.5 rounded-full shadow-floating">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+        </svg>
+        <span class="label-md">12 Day Streak</span>
+      </div>
+    </header>
+
+    <!-- Daily Overview Section -->
+    <section class="mb-section-margin">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="headline-md text-on-surface">Daily Overview</h2>
+      </div>
+
+      <div class="bg-surface-container-lowest rounded-lg shadow-floating p-6 relative">
+        <!-- Action Icon -->
+        <button class="absolute top-4 right-4 bg-primary text-on-primary w-8 h-8 rounded-full flex items-center justify-center shadow-floating transition-transform active:scale-95 active:shadow-floating-active cursor-pointer border-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+
+        <div class="flex flex-col items-center">
+          <!-- Main Circular Progress Ring for Calories -->
+          <div class="relative w-40 h-40 flex items-center justify-center mb-6">
+            <!-- Ghost track -->
+            <svg class="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="transparent" stroke-width="8" class="stroke-primary-container opacity-30"></circle>
+              <!-- Progress arc -->
+              <circle cx="50" cy="50" r="40" fill="transparent" stroke-width="8" class="stroke-primary" stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-linecap="round"></circle>
+            </svg>
+            <div class="text-center z-10 flex flex-col items-center justify-center">
+              <span class="headline-xl text-primary">1,450</span>
+              <span class="label-md text-on-surface-variant">kcal eaten</span>
+            </div>
+          </div>
+
+          <!-- Macros -->
+          <div class="w-full flex justify-between gap-2">
+            <!-- Carbs -->
+            <div class="flex flex-col items-center">
+              <span class="label-sm text-on-surface-variant mb-1">Carbs</span>
+              <div class="relative w-12 h-12 flex items-center justify-center mb-1">
+                <svg class="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="35" fill="transparent" stroke-width="12" class="stroke-secondary-container opacity-30"></circle>
+                  <circle cx="50" cy="50" r="35" fill="transparent" stroke-width="12" class="stroke-secondary" stroke-dasharray="219.9" stroke-dashoffset="109.9" stroke-linecap="round"></circle>
+                </svg>
+                <span class="label-sm text-on-surface">150g</span>
+              </div>
+            </div>
+
+            <!-- Protein -->
+            <div class="flex flex-col items-center">
+              <span class="label-sm text-on-surface-variant mb-1">Protein</span>
+              <div class="relative w-12 h-12 flex items-center justify-center mb-1">
+                <svg class="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="35" fill="transparent" stroke-width="12" class="stroke-primary-container opacity-30"></circle>
+                  <circle cx="50" cy="50" r="35" fill="transparent" stroke-width="12" class="stroke-primary" stroke-dasharray="219.9" stroke-dashoffset="43.9" stroke-linecap="round"></circle>
+                </svg>
+                <span class="label-sm text-on-surface">95g</span>
+              </div>
+            </div>
+
+            <!-- Fat -->
+            <div class="flex flex-col items-center">
+              <span class="label-sm text-on-surface-variant mb-1">Fat</span>
+              <div class="relative w-12 h-12 flex items-center justify-center mb-1">
+                <svg class="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="35" fill="transparent" stroke-width="12" class="stroke-tertiary-container opacity-30"></circle>
+                  <circle cx="50" cy="50" r="35" fill="transparent" stroke-width="12" class="stroke-tertiary" stroke-dasharray="219.9" stroke-dashoffset="153.9" stroke-linecap="round"></circle>
+                </svg>
+                <span class="label-sm text-on-surface">45g</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Water Tracker Section -->
+    <section class="mb-section-margin">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="headline-md text-on-surface">Hydration</h2>
+      </div>
+
+      <div class="bg-surface-container-lowest rounded-lg shadow-floating p-6 flex items-center justify-between">
+        <div>
+          <p class="label-md text-on-surface-variant mb-1">Daily Goal: 2.5L</p>
+          <div class="flex items-baseline gap-1">
+            <span class="headline-lg text-tertiary">1.2</span>
+            <span class="body-md text-on-surface-variant">Liters</span>
+          </div>
+        </div>
+
+        <!-- Water Fill Animation Container -->
+        <div class="relative w-16 h-24 bg-tertiary-container rounded-full overflow-hidden border-2 border-surface-container-highest shadow-inner">
+          <div class="absolute bottom-0 w-full h-[48%] bg-tertiary transition-all duration-1000 ease-in-out">
+            <!-- Simulated fluid wave top -->
+            <svg class="absolute -top-3 w-full h-4 text-tertiary fill-current" viewBox="0 0 100 20" preserveAspectRatio="none">
+              <path d="M0 10 Q 25 20 50 10 T 100 10 L 100 20 L 0 20 Z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <button class="w-10 h-10 bg-tertiary text-on-tertiary rounded-full flex items-center justify-center shadow-floating transition-transform active:scale-95 active:shadow-floating-active border-0 cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Recent Meals Section -->
+    <section class="mb-section-margin">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="headline-md text-on-surface">Recent Meals</h2>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <!-- Meal Card 1 -->
+        <div class="bg-surface-container-lowest rounded-lg shadow-floating p-4 flex items-center gap-4 cursor-pointer transition-shadow active:shadow-floating-active">
+          <div class="w-12 h-12 bg-secondary-fixed rounded-full flex items-center justify-center text-on-secondary-fixed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m18 11-4-4"></path>
+              <path d="m11.5 17.5-4-4"></path>
+              <path d="m5 22 4-4"></path>
+              <path d="M18 22a8 8 0 0 0-8-8c-2 0-3.5.5-5 2l1.5 1.5L5 22l4-1.5L10.5 19c1.5-1.5 2-3 2-5a8 8 0 0 0-8-8"></path>
+              <path d="M22 2a8 8 0 0 0-8 8c0 2-.5 3.5-2 5l-1.5-1.5L9 22l1.5-4L12 19.5c1.5-1.5 3-2 5-2a8 8 0 0 0 8-8"></path>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="body-md text-on-surface font-semibold">Avocado Toast</h3>
+            <p class="label-sm text-on-surface-variant">Breakfast • 8:30 AM</p>
+          </div>
+          <div class="text-right">
+            <span class="body-md text-primary font-bold">320</span>
+            <p class="label-sm text-on-surface-variant">kcal</p>
+          </div>
+        </div>
+
+        <!-- Meal Card 2 -->
+        <div class="bg-surface-container-lowest rounded-lg shadow-floating p-4 flex items-center gap-4 cursor-pointer transition-shadow active:shadow-floating-active">
+          <div class="w-12 h-12 bg-tertiary-fixed rounded-full flex items-center justify-center text-on-tertiary-fixed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20"></path>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="body-md text-on-surface font-semibold">Grilled Chicken Salad</h3>
+            <p class="label-sm text-on-surface-variant">Lunch • 1:15 PM</p>
+          </div>
+          <div class="text-right">
+            <span class="body-md text-primary font-bold">450</span>
+            <p class="label-sm text-on-surface-variant">kcal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Bottom Navigation -->
+  <nav class="fixed bottom-0 w-full max-w-md left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-md border-t border-surface-variant px-6 py-4 z-50">
+    <div class="flex justify-between items-center">
+      <!-- Home Icon (Active) -->
+      <button class="flex flex-col items-center gap-1 cursor-pointer border-0 bg-transparent text-primary">
+        <div class="relative">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <div class="absolute -top-1 -right-1 w-2 h-2 bg-secondary rounded-full"></div>
+        </div>
+        <span class="label-sm">Home</span>
+      </button>
+
+      <!-- Log Button (Primary Action) -->
+      <button class="relative -top-6 bg-gradient-to-tr from-primary to-primary-container text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-floating transition-transform active:scale-95 active:shadow-floating-active active:translate-y-[2px] border-0 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+      </button>
+
+      <!-- Profile Icon -->
+      <button class="flex flex-col items-center gap-1 cursor-pointer border-0 bg-transparent text-on-surface-variant hover:text-on-surface transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span class="label-sm">Profile</span>
+      </button>
+    </div>
+  </nav>
+
 </body>
 </html>
